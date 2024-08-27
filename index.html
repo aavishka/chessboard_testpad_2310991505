@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+</head>
+<body>
+    <script>
+        function print(data) {
+            const element = document.createElement('div');
+            element.innerHTML = data;
+            document.body.appendChild(element);
+        }
+
+        function newLine() {
+            return '<br>';
+        }
+
+        const board_size = 8; // Size of the chessboard
+
+        function createChessboard(size) {
+            let grid = '';
+
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    if ((row + col) % 2 === 0) {
+                        grid += '*';
+                    } else {
+                        grid += '#';
+                    }
+                }
+                grid += newLine(); // Move to the next line
+            }
+
+            print(grid); // Print the generated grid
+        }
+
+        // Execute the function to create and print the chessboard
+        createChessboard(board_size);
+    </script>
+</body>
+</html>
